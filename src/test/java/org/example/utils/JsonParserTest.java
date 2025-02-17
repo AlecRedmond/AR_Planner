@@ -17,19 +17,7 @@ class JsonParserTest {
     }
 
     @Test
-    void serializePlannerEvent() {
-        PlannerEvent plannerEvent = new PlannerEvent(LocalDateTime.of(2030,2,4,6,8,10),"Test Event","Example detail");
-        System.out.println(jsonParser.serializePlannerEvent(plannerEvent));
-    }
-
-    @Test
     void serializePlannerEventArray() {
-    }
-
-    @Test
-    void deserializePlannerEvent() {
-        PlannerEvent plannerEvent = jsonParser.deserializePlannerEvent(DESERIALIZE);
-        System.out.println(plannerEvent);
     }
 
     @Test
@@ -38,7 +26,7 @@ class JsonParserTest {
 
     @Test
     void writeToFile() {
-        PlannerEvent plannerEvent1 = new PlannerEvent(LocalDateTime.of(2026,2,4,6,8,10),"Test Event","Example detail");
+        PlannerEvent plannerEvent1 = new PlannerEvent(LocalDateTime.of(2026,6,9,6,8,10),"Test Event","Example detail");
         PlannerEvent plannerEvent2 = new PlannerEvent(LocalDateTime.of(2030,2,4,6,8,10),"Test Event","Example detail");
         PlannerEvent plannerEvent3 = new PlannerEvent(LocalDateTime.of(2033,2,4,6,8,10),"Test Event","Example detail");
         PlannerEvent plannerEvent4 = new PlannerEvent(LocalDateTime.of(2031,2,4,6,8,10),"Test Event","Example detail");

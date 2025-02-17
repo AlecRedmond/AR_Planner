@@ -4,14 +4,12 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import lombok.Data;
 import org.example.application.PlannerEvent;
-import org.example.configs.Configs;
 
 import java.io.*;
-import java.nio.file.Files;
 import java.time.LocalDateTime;
 import java.util.stream.Collectors;
 
-import static org.example.configs.Configs.SAVE_LOCATION;
+import static org.example.configs.Configs.*;
 
 @Data
 public class JsonParser {
@@ -59,18 +57,8 @@ public class JsonParser {
         fw.close();
     }
 
-    //Serialize
-    public String serializePlannerEvent(PlannerEvent plannerEvent) {
-        return gson.toJson(plannerEvent);
-    }
-
     public String serialisePlannerEventArray(PlannerEvent[] plannerEvents) {
         return gson.toJson(plannerEvents);
-    }
-
-    //Deserialize
-    public PlannerEvent deserializePlannerEvent(String json) {
-        return gson.fromJson(json, PlannerEvent.class);
     }
 
     public PlannerEvent[] deserializePlannerEventArray(String json) {
